@@ -58,13 +58,10 @@
 				color: #fa9f7a;
 			}
 
-			.nav-link.open
-			{
-                color: #fa9f7a;
-			}
-
 			.nav-links-container {
-				position: center;
+				position: absolute;
+				align-items: center;
+				justify-content: center;
 				display: inline-block;
 				background-color: rgba(0, 0, 0, 0.5);
 				padding: 50px 100px;
@@ -176,15 +173,6 @@
 					var window = document.getElementById(ElementId);
 					window.style.display = window.style.display === 'block' ? 'none' : 'block';
 
-					if (window.style.display === 'block')
-					{
-                        link.classList.add('open');
-                    }
-					else 
-					{
-                        link.classList.remove('open');
-					}
-					
 					makeDraggable(ElementId);
 				}
 
@@ -223,6 +211,7 @@
 		</body>
 	</head>
 </html>
+
 
 
 
