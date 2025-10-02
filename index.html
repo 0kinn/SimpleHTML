@@ -58,11 +58,16 @@
 				color: #fa9f7a;
 			}
 
+			.nav-link.open
+			{
+                color: #fa9f7a;
+			}
+
 			.nav-links-container {
-				position: relative;
+				position: center;
 				display: inline-block;
-				background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-				padding: 10px 20px;
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 50px 100px;
 				border-radius: 10px;
 			}
 			
@@ -79,7 +84,7 @@
 				box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 				transition: top 0.1s, left 0.1s;
 			}
-
+			
 			.draggable-header
 			{
 				background-color: #333;
@@ -171,6 +176,15 @@
 					var window = document.getElementById(ElementId);
 					window.style.display = window.style.display === 'block' ? 'none' : 'block';
 
+					if (window.style.display === 'block')
+					{
+                        link.classList.add('open');
+                    }
+					else 
+					{
+                        link.classList.remove('open');
+					}
+					
 					makeDraggable(ElementId);
 				}
 
@@ -209,5 +223,6 @@
 		</body>
 	</head>
 </html>
+
 
 
