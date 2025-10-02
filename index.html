@@ -58,8 +58,16 @@
 				color: #fa9f7a;
 			}
 
-			 .draggable-window 
-			 {
+			.nav-links-container {
+				position: relative;
+				display: inline-block;
+				background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+				padding: 10px 20px;
+				border-radius: 10px;
+			}
+			
+			.draggable-window 
+			{
 				background-color: #fff;
 				border: 2px solid #000;
 				position: fixed;
@@ -89,7 +97,7 @@
 		</style>
 		<body>
 			<header>
-				<div class="header-center">
+				<div class="nav-links-container">
 					<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('profileWindow')">PROFILE</a>
 					<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('moviesWindow')">MOVIES</a>
 					<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('booksWindow')">BOOKS</a>
@@ -201,4 +209,5 @@
 		</body>
 	</head>
 </html>
+
 
