@@ -1,215 +1,243 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
-		<title>About Me site :3</title>
-		<meta charset="UTF-8">
-  	 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>
-			body
-			{
-				margin: 0;
-				background: linear-gradient(to bottom, #a2cffa, #ffeeb8) no-repeat center center fixed;
-				background-size: cover;
-				font-family: "Quicksand", sans-serif;
-				color: white;
+  <head>
+    <title>About Me site :3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		body 
+		{
+			margin: 0;
+			background: linear-gradient(to bottom, #a2cffa, #ffeeb8) no-repeat center center fixed;
+			background-size: cover;
+			font-family: "Quicksand", sans-serif;
+			color: white;
+		}
+
+		header 
+		{
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: top 0.5s ease;
 			}
 
-			header
-			{
-				width: 100%;
-				position: absolute;
-				top: 60px;
-				right: 0;
-			}
+		.header-center
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 23px;
+		}
 
-			.header-center
-			{
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 23px;
-			}
+		.nav-link 
+		{
+			color: white;
+			text-decoration: none;
+			margin-right: 20px;
+			transition: color 0.5s ease;
+		}
 
-			.nav-link 
-			{
-				color: white;
-				text-decoration: none;
-				gap: 50px;
-				transition: color 0.5s ease;
-			}
+		.nav-link:hover 
+		{
+			color: #fa9f7a;
+		}
 
-			.nav-link:hover 
-			{
-				color: #fa9f7a;
-			}
+		.nav-links-container 
+		{
+			display: inline-block;
+			background-color: #333;
+			padding: 30px 30px;
+			border-radius: 10px;
+		}
 
-			.nav-links-container 
-			{
-				display: inline-block;
-				background-color: #333;
-				padding: 30px 30px;
-				border-radius: 10px;
-			}
-			
-			.draggable-window 
-			{
-				background-color: #fff;
-				border: 2px solid #000;
-				position: fixed;
-				top: 100px;
-				left: 50%;
-				transform: translateX(-50%);
-				z-index: 1000;
-				display: none;
-				box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-				transition: top 0.1s, left 0.1s;
-			}
-			
-			.draggable-header
-			{
-				background-color: #333;
-				color: white;
-				padding: 25px;
-				cursor: move;
-				text-align: center;
-			}
+		.draggable-window 
+		{
+			background-color: #fff;
+			border: 2px solid #000;
+			position: fixed;
+			top: 250px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 1000;
+			display: none;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			transition: top 0.1s, left 0.1s;
+		}
 
-			.draggable-body 
-			{
-				padding: 15px;
-				color: #333;
-			}
-		</style>
-		<body>
-			<header>
-				<center>
-					<div class="header-center">
-						<div class="nav-links-container">
-							<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('profileWindow')">PROFILE</a>
-							<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('moviesWindow')">MOVIES</a>
-							<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('booksWindow')">BOOKS</a>
-							<a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('otherSitesWindow')">OTHER SITES</a>
-						</div>
-					</div>
-				</center>
-			</header>
+		.draggable-header 
+		{
+			background-color: #333;
+			color: white;
+			padding: 25px;
+			cursor: move;
+			text-align: center;
+		}
 
-			<div id="profileWindow" class="draggable-window">
-				<div class="draggable-header" id="profileWindowHeader">
-					Profile Window
-				</div>
-				<div class="draggable-body">
-					<img style="border: 2px solid black;" src="pfp.png" alt="Profile Image"/>
-					<h1>Muhammad Syadeq Farzli Bin Farthie Anuar</h1>
-					<h4>ft. ezzairel</h4>
-					
-					<h2 style="color: purple">Current Mood :</h2>
-					<a href="javascript:void(0)" onclick="toggleWindow('imageWindow')">
-					Im stroking my cat rn, all up on my cat rn, just strokin her up, strokin my cat rn.</a>
-	
-				
-					<h2 style="color: purple">Work Experience : </h2>
-					<a>Freelancing (Programming/arts)</a>
-				</div>
-			</div>
-			
-			<div id="imageWindow" class="draggable-window">
-				<div class="draggable-header" id="imageWindowHeader">
-					My Mood
-				</div>
-				<div class="draggable-body">
-					<img src="glorb cat.jpg"/>
-				</div>
-			</div>
+		.draggable-body 
+		{
+			padding: 15px;
+			color: #333;
+		}
+    </style>
+  </head>
 
-			<div id="booksWindow" class="draggable-window">
-				<div class="draggable-header" id="booksWindowHeader">
-					Books Window
-				</div>
-				<div class="draggable-body">
-					<a style="font-size: 20px;"href="https://www.anime-planet.com/manga/chainsaw-man" target="_blank"> Chainsaw Man </a><p></p>
-					<a style="font-size: 20px;"href="https://myanimelist.net/anime/51678/Oniichan_wa_Oshimai" target="_blank"> Onii chan wa Oshimai </a>
-				</div>
-			</div>
-			
-			<div id="moviesWindow" class="draggable-window">
-				<div class="draggable-header" id="moviesWindowHeader">
-					Movies Window
-				</div>
-				<div class="draggable-body">
-					<a style="font-size: 20px;"href="https://www.imdb.com/title/tt16311594/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_f1" target="_blank"> F1 : THE MOVIE</a><p></p>
-					<a style="font-size: 20px;"href="https://www.imdb.com/title/tt1950186" target="_blank"> FORD VS FERRARI</a><p></p>
-					<a style="font-size: 20px;"href="https://www.imdb.com/title/tt1001526/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_megamind" target="_blank"> MEGAMIND</a>
-				</div>
-			</div>
+  <body>
+    <header id="header">
+      <div class="header-center">
+        <div class="nav-links-container">
+          <a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('profileWindow')">PROFILE</a>
+          <a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('moviesWindow')">MOVIES</a>
+          <a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('booksWindow')">BOOKS</a>
+          <a href="javascript:void(0)" class="nav-link" onclick="toggleWindow('otherSitesWindow')">OTHER SITES</a>
+        </div>
+      </div>
+    </header>
 
-			<div id="otherSitesWindow" class="draggable-window">
-				<div class="draggable-header" id="otherSitesWindowHeader">
-					Other Sites Window
-				</div>
-				<div class="draggable-body">
-					<h2 style="color: purple">My sites :</h2>
-					<a style="font-size: 25px;"href="https://syaserver.my"> https://syaserver.my</a><p></p>
-					<a style="font-size: 25px;"href="https://grove-site.syaserver.my"> https://grove-site.syaserver.my</a>
-				</div>
-			</div>
+    <div id="profileWindow" class="draggable-window">
+      <div class="draggable-header" id="profileWindowHeader">
+        Profile Window
+      </div>
+      <div class="draggable-body">
+        <img style="border: 2px solid black;" src="pfp.png" alt="Profile Image"/>
+        <h1>Muhammad Syadeq Farzli Bin Farthie Anuar</h1>
+        <h4>ft. ezzairel</h4>
+        <h2 style="color: purple">Current Mood :</h2>
+        <a href="javascript:void(0)" onclick="toggleWindow('imageWindow')">
+          Im stroking my cat rn, all up on my cat rn, just strokin her up, strokin my cat rn.
+        </a>
 
-			<script>
-				function toggleWindow(ElementId) 
-				{
-					var window = document.getElementById(ElementId);
-					window.style.display = window.style.display === 'block' ? 'none' : 'block';
+        <h2 style="color: purple">Work Experience : </h2>
+        <a>Freelancing (Programming/arts)</a>
+      </div>
+    </div>
 
-					makeDraggable(ElementId);
-				}
+    <div id="imageWindow" class="draggable-window">
+      <div class="draggable-header" id="imageWindowHeader">
+        My Mood
+      </div>
+      <div class="draggable-body">
+        <img src="glorb cat.jpg"/>
+      </div>
+    </div>
 
-				function makeDraggable(ElementId) 
-				{
-					var dragElement = document.getElementById(ElementId);
-					var dragHeader = document.getElementById(ElementId + "Header");
+    <div id="booksWindow" class="draggable-window">
+      <div class="draggable-header" id="booksWindowHeader">
+        Books Window
+      </div>
+      <div class="draggable-body">
+        <a style="font-size: 20px;"href="https://www.anime-planet.com/manga/chainsaw-man" target="_blank"> Chainsaw Man </a><p></p>
+        <a style="font-size: 20px;"href="https://myanimelist.net/anime/51678/Oniichan_wa_Oshimai" target="_blank"> Onii chan wa Oshimai </a>
+      </div>
+    </div>
 
-					if (!dragHeader) return;
-					dragHeader.onmousedown = function(event) 
-					{
-						var shiftX = event.clientX - dragElement.getBoundingClientRect().left;
-						var shiftY = event.clientY - dragElement.getBoundingClientRect().top;
+    <div id="moviesWindow" class="draggable-window">
+      <div class="draggable-header" id="moviesWindowHeader">
+        Movies Window
+      </div>
+      <div class="draggable-body">
+        <a style="font-size: 20px;"href="https://www.imdb.com/title/tt16311594/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_f1" target="_blank"> F1 : THE MOVIE</a><p></p>
+        <a style="font-size: 20px;"href="https://www.imdb.com/title/tt1950186" target="_blank"> FORD VS FERRARI</a><p></p>
+        <a style="font-size: 20px;"href="https://www.imdb.com/title/tt1001526/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_megamind" target="_blank"> MEGAMIND</a>
+      </div>
+    </div>
 
-						dragElement.style.zIndex = 1001;
+    <div id="otherSitesWindow" class="draggable-window">
+      <div class="draggable-header" id="otherSitesWindowHeader">
+        Other Sites Window
+      </div>
+      <div class="draggable-body">
+        <h2 style="color: purple">My sites :</h2>
+        <a style="font-size: 25px;"href="https://syaserver.my"> https://syaserver.my</a><p></p>
+        <a style="font-size: 25px;"href="https://grove-site.syaserver.my"> https://grove-site.syaserver.my</a>
+      </div>
+    </div>
 
-						document.onmousemove = function(event) 
-						{
-							dragElement.style.left = event.clientX + shiftX + 'px';
-							dragElement.style.top = event.clientY - shiftY + 'px';
-						};
+    <script>
+      let isWindowOpen = false;
 
-						document.onmouseup = function() 
-						{
-							document.onmousemove = null;
-							document.onmouseup = null;
-							dragElement.style.zIndex = 1000;
-						};
-					};
-					dragHeader.ondragstart = function() 
-					{
-						return false;
-					};
-				}
-			</script>
-		</body>
-	</head>
+      function toggleWindow(ElementId) 
+	  {
+        var window = document.getElementById(ElementId);
+        const header = document.getElementById('header');
+        window.style.display = window.style.display === 'block' ? 'none' : 'block';
+        
+        if (window.style.display === 'block')
+		{
+          moveHeaderUp();
+          isWindowOpen = true;
+        } 
+		else 
+		{
+          if (noWindowIsOpen()) 
+		  {
+            moveHeaderBack();
+            isWindowOpen = false;
+          }
+        }
+
+        makeDraggable(ElementId);
+      }
+
+      function moveHeaderUp() 
+	  {
+        const header = document.getElementById('header');
+        header.style.top = '10%';
+      }
+
+      function moveHeaderBack() 
+	  {
+        const header = document.getElementById('header');
+        header.style.top = '50%';
+      }
+
+      function noWindowIsOpen() 
+	  {
+        const windows = document.querySelectorAll('.draggable-window');
+        for (let window of windows) 
+		{
+          if (window.style.display === 'block') {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function makeDraggable(ElementId) 
+	  {
+        var dragElement = document.getElementById(ElementId);
+        var dragHeader = document.getElementById(ElementId + "Header");
+
+        if (!dragHeader) return;
+
+        dragHeader.onmousedown = function(event) 
+		{
+          var shiftX = event.clientX - dragElement.getBoundingClientRect().left;
+          var shiftY = event.clientY - dragElement.getBoundingClientRect().top;
+
+          dragElement.style.zIndex = 1001;
+
+          document.onmousemove = function(event) 
+		  {
+            dragElement.style.left = event.clientX + shiftX + 'px';
+            dragElement.style.top = event.clientY - shiftY + 'px';
+          };
+
+          document.onmouseup = function() 
+		  {
+            document.onmousemove = null;
+            document.onmouseup = null;
+            dragElement.style.zIndex = 1000;
+          };
+        };
+
+        dragHeader.ondragstart = function() 
+		{
+          return false;
+        };
+      }
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
